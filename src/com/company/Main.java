@@ -138,12 +138,19 @@ public class Main {
     }
 
     public static String inputString(String message) {
+        String string;
         System.out.println(message);
         Scanner scanner = new Scanner(System.in);
-//        if (scanner.hasNextInt() == true) {
-//            System.out.println("!!!!!!Введена пустая строка!!!! Изменение значения слова не произошло.");
-//            }
-        return scanner.nextLine();
+        do  {
+                string = scanner.nextLine();
+                if (string.length() == 0) {System.out.println("Введена пустая строка, повторите ввод!!");
+                continue;}
+        }
+        while (string.length() == 0);
+//        if (scanner.nextLine().equals("")) {
+////            System.out.println("!!!!!!Введена пустая строка!!!! Изменение значения слова не произошло.");
+////            }
+        return string;
 
     }
 
